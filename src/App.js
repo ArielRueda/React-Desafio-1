@@ -1,15 +1,16 @@
-import logo from './logo.svg';
+import gif from './componentes/imagenes/giphy.gif';
 import './App.css';
-import Desafio1 from './componentes/Desafio1.js';
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <h1>este es el desafio</h1>
-     <Desafio1/>
-      
-      </div>
+      <header className="App-header">
+        <img src={gif} className="App-logo" alt="logo" />
+        <p>
+          Desafio 1
+        </p>
+       
+      </header>
     </div>
   );
 }
