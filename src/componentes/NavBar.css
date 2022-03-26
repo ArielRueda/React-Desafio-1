@@ -1,0 +1,28 @@
+#barra {
+    box-shadow: 2px 2px 2px 1px #12090961;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 2000;
+}
+
+#items a {
+    position: relative;
+    font-size: 1.7rem;
+    font-family: 'Vollkorn', serif;
+}
+
+#items a::after {
+    content: "";
+    background-color: #EAA798;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+}
+
+#items a:hover::after {
+    opacity: 0.8
+}
