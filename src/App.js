@@ -14,7 +14,7 @@ function App() {
 
         <img src={gif} className="App-logo" alt="logo" />
         <p>
-          Desafio 1
+          Desafio 2
         </p>
        
       </header>
