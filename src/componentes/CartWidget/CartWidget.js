@@ -2,7 +2,7 @@ import  carrito from './carrito.png';
 import NavBar from '../NavBar.css';
 function CartWidget(params) {
     return(
-<div><img src={carrito} alt="carrito"/>
+<div><img className='imagen-carrito' src={carrito} alt="carrito"/>
 <p className='carrito'>0</p>
      </div>
     );
