@@ -1,0 +1,10 @@
+.card{
+position: relative;
+top: 14rem;
+left: -29rem;
+    width: 18rem;
+}
+.card-text{
+    color: black;
+    line-height: 1.3rem;
+}

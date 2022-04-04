@@ -1,6 +1,7 @@
 import logo from './imagenes/desktop-logo.png';
 import NavBarCss from './NavBar.css';
 import CartWidget from './CartWidget/CartWidget';
+
 function NavBar() {
     return (
 

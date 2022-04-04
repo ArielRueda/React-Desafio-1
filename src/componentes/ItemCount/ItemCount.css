@@ -1,0 +1,23 @@
+.botones{
+    display: flex;
+    color: black;
+    position: relative;
+    left: -27rem;
+    top: 14rem;
+}
+.botonDeMenos{
+    background-color: #eaa798;
+    position: relative;
+    left: -4rem;
+}
+.botonDeMas{
+    background-color: #eaa798;
+    position: relative;
+    left: 4rem;
+}
+.botonAgregar{
+    position: relative;
+    top: 15rem;
+    left: -29rem;
+    background-color: #eaa798;
+}
