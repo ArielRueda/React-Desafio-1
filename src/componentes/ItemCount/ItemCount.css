@@ -1,23 +1,28 @@
 .botones{
     display: flex;
     color: black;
-    position: relative;
-    left: -27rem;
-    top: 14rem;
+    position: absolute;
+    left:0rem;
+    top: 18rem;
 }
 .botonDeMenos{
     background-color: #eaa798;
-    position: relative;
-    left: -4rem;
+    position: absolute;
+    left: 0rem;
 }
 .botonDeMas{
     background-color: #eaa798;
-    position: relative;
-    left: 4rem;
+    position: absolute;
+    left: 16rem;
 }
 .botonAgregar{
     position: relative;
-    top: 15rem;
-    left: -29rem;
+    top: 23rem;
+    left: 0rem;
     background-color: #eaa798;
+}
+p{
+    position: absolute;
+    top: .5rem;
+    left: 8rem;
 }

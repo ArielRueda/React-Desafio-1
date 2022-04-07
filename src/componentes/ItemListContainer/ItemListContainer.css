@@ -1,8 +1,11 @@
-.card{
+.card1{
 position: relative;
-top: 14rem;
-left: -29rem;
-    width: 18rem;
+top: 16rem;
+left: 7rem;
+width: 18rem;
+height: 26rem;
+background-color: bisque;
+border: 2px 2px 2px 2px solid black;
 }
 .card-text{
     color: black;
