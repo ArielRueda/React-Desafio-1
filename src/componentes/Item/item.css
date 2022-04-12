@@ -1,4 +1,4 @@
-.img-card1{
+.imagen{
     position: absolute;
     width: 100%;
 }
@@ -7,6 +7,10 @@
 
 }
 .tarjeta1{
+    display: flex;
     position: relative;
-    left: -9rem;
+    width: 18rem;
+    height: 20rem;
+    
+
 }
