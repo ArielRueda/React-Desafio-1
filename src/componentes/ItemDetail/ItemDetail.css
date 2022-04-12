@@ -3,18 +3,18 @@
 }
 
 .card-text1{
-    position: relative;
-    top: -27rem;
-    left: 13rem;
+    position: absolute;
+    top: 9rem;
+    left: 51rem;
     font-size: 1.7rem;
     z-index: 1000;
 }
 .name-card1{
     
-
-    position: relative;
-    top: -30rem;
-    left: 11rem;
+display: inline-block;
+    position: absolute;
+    top: -0;
+    left: 54rem;
     font-size: 3rem;
 }
 
@@ -23,4 +23,16 @@
     top: -2.4rem;
     left: 1rem;
 }
+.imagen-card1{
+    position: absolute;
+    width: 40%;
+    left: 15rem;
+}
+.card-price{
+    position: absolute;
+    left: 57rem;
+    top: 16rem;
+    font-size: 3rem;
+}
+
 

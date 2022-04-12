@@ -28,7 +28,7 @@ const ItemDetailContainer = ()=>{
                 product?
             <ItemDetail{...product}/>:
             <h1>el producto no existe</h1>}
-            <h1>hola</h1>
+           
         </div>
     )
 }

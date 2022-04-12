@@ -1,10 +1,10 @@
 .botones{
     display: flex;
     color: black;
-    position: relative;
+    position: absolute;
     display: inline-block;
-    left: 2rem;
-    top: -23rem;
+    left: 51rem;
+    top: 22rem;
     }
 .botonDeMenos{
     background-color: #eaa798;
@@ -18,13 +18,14 @@
     top: .1rem;
 }
 .botonAgregar{
-    position: relative;
-    top: 23rem;
-    left: 0rem;
+    position: absolute;
+    top: 28rem;
+    left: 56rem;
     background-color: #eaa798;
 }
 .marcador{
     position: relative;
     top: .5rem;
     left: 8rem;
+    font-size: 1.7rem;
 }
