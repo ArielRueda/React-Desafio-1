@@ -1,5 +1,5 @@
 import { useState } from "react";
-import estilo from "./ItemCount.css"
+import   "./ItemCount.css"
 
 const Contador=({initial,stock,onAdd})=>{
     const  [count,setCount]=useState(initial)
