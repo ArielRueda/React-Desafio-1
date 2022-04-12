@@ -7,11 +7,6 @@
 
 }
 
-.col{
-    display: flex;
-    position: relative;
+.card{
     width: 18rem;
-    height: 20rem;
-    background-color: aqua;
-
 }

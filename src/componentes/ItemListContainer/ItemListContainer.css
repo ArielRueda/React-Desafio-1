@@ -1,8 +1,7 @@
-.container{
-display: flex;
-width: 100%;
+.container-ps{
 position: relative;
-top: 18rem;
+top: 17rem;
+left: 8rem;
 }
 .card-text{
     color: black;
