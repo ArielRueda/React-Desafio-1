@@ -21,7 +21,7 @@ return(
     <div>
         <div className="botones">
             <button className="btn btn-primary botonDeMenos " onClick={decrement}>-</button>
-            <p>{count}</p>
+            <p className="marcador">{count}</p>
             <button className="botonDeMas btn btn-primary" onClick={increment}>+</button>
         </div>
         <div>
