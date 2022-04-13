@@ -5,24 +5,22 @@ import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailCon
 import NavBar from './componentes/NavBar';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom'
 
 
 function App() {
-const [show, setShow]=useState('/lista')
+  const [show, setShow] = useState('/lista')
   return (
     <div className="App">
-
-      <header className="App-header">
-        
-              <NavBar />
-         
-  
-
-      </header>
-      <button onClick={()=>setShow('/lista')} className="lista btn-primary">list</button>
-      <button onClick={()=>setShow('/detail')} className="detail btn-primary">detail</button>
-   { show ==='/lista'? <ItemListContainer /> :null}
-   { show === '/detail'?<ItemDetailContainer/> :null}
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<h1>Home</h1>}/>
+         <Route path='/productos' element={<ItemListContainer />} />
+          <Route path='/detalle/:productid' element= {<ItemDetailContainer />} />
+          <Route path='*' element={<h1>error 404</h1>}/>
+        </Routes>
+      </BrowserRouter>
 
     </div>
   );
