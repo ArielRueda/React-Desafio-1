@@ -24,8 +24,9 @@ function NavBar() {
                         <a className="nav-link" href="contacto.html">Contacto</a>
                         <a className="nav-link" href="preguntasfrecuentes.html">Preguntas Frecuentes</a>] */}
                          <Link to='/' className='nav-link'>Home</Link>
-                         <Link to='/productos' className='nav-link'>Productos</Link>
-                       
+                          <Link to='/productos' className='nav-link'>Productos</Link>
+                         <Link to='/contacto' className='nav-link'>Contacto</Link>
+                      <Link to='/PreguntasFrecuentes' className='nav-link'>PreguntasFrecuentes</Link>
 
                     </div>
                 </div>
