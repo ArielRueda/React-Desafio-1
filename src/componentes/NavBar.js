@@ -18,11 +18,7 @@ function NavBar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div id="items" className="navbar-nav">
-                        {/* <a className="nav-link active selected" aria-current="page" href="index">Home</a> */}
-                        {/* [ <a className="nav-link" href="productos.html">Productos</a>
-                        <a className="nav-link" href="sobrenosotros.html">Sobre Nosotros</a>
-                        <a className="nav-link" href="contacto.html">Contacto</a>
-                        <a className="nav-link" href="preguntasfrecuentes.html">Preguntas Frecuentes</a>] */}
+                     
                          <Link to='/' className='nav-link'>Home</Link>
                           <Link to='/productos' className='nav-link'>Productos</Link>
                          <Link to='/contacto' className='nav-link'>Contacto</Link>

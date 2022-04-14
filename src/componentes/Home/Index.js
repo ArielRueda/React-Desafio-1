@@ -2,7 +2,7 @@ import './Index.css'
 import portada from '../imagenes/portada2.jpg'
 import mesa from '../imagenes/mesa_recorte.jpg'
 
-function Index() {
+function index() {
     return
     (
         <div>
@@ -49,6 +49,6 @@ function Index() {
                     </div>
         </div>
         
-                )
+                );
 }
-export default Index
+export default index

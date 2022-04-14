@@ -1,5 +1,5 @@
 import './PreguntasFrecuentes.css';
-
+import '../../estilo/bootstrap.min.css'
 
 function PreguntasFrecuentes() {
     return(
@@ -45,7 +45,7 @@ function PreguntasFrecuentes() {
 
                         <div className="collapse" id="collapseExample">
                             <div className="card card-body">
-                                <p>
+                                
                                     <ul>
                                         <li>
                                             Aceptamos tarjeta de credito/debito
@@ -57,7 +57,7 @@ function PreguntasFrecuentes() {
                                             mediante Mercado Pago.
                                         </li>
                                     </ul>
-                                </p>
+                                
                             </div>
                         </div>
                     </div>
@@ -70,12 +70,12 @@ function PreguntasFrecuentes() {
                             <div className="card card-body">
                                 <ul>
                                     <li> ⚠️CHOQUE TÉRMICO
-                                        <hr> Evitá los cambios bruscos de temperatura, por ej: al terminar tu infusión tu taza queda caliente, no mojarla de inmediato con agua fría.</hr>
+                                        <hr/> Evitá los cambios bruscos de temperatura, por ej: al terminar tu infusión tu taza queda caliente, no mojarla de inmediato con agua fría.
                                     </li>
                                     <li> ⚠️ MICROONDAS Y HORNO
-                                        <hr> Las piezas son aptas para microondas u horno pero no por tiempos prolongados, lo ideal es que las uses sólo para calentar por unos minuto</hr></li>
+                                        <hr/> Las piezas son aptas para microondas u horno pero no por tiempos prolongados, lo ideal es que las uses sólo para calentar por unos minuto</li>
                                     <li>⚠️ GOLPES
-                                        <hr> Cuidala de los golpes, a veces a simple vista no se vé. Pero un pequeño golpecito puede marcar el esmalte y hacer que se craquele con el uso. Igualmente si se craquela no afecta al buen funcionamiento de la pieza</hr></li>
+                                        <hr/> Cuidala de los golpes, a veces a simple vista no se vé. Pero un pequeño golpecito puede marcar el esmalte y hacer que se craquele con el uso. Igualmente si se craquela no afecta al buen funcionamiento de la pieza</li>
                                 </ul>
                             </div>
                         </div>

@@ -7,7 +7,7 @@ import ItemListContainer from './componentes/ItemListContainer/ItemListContainer
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route  } from 'react-router-dom'
 import Footer from './componentes/Footer/Footer';
-import Index from './componentes/Home/Index.js';
+import Index from './componentes/Home/index';
 import Contacto from './componentes/contacto/Contacto';
 import PreguntasFrecuentes from './componentes/PreguntasFrecuentes/PreguntasFrecuntes';
 
@@ -20,7 +20,7 @@ function App() {
         <NavBar />
         
         <Routes>
-          <Route path='/' element={<Index/>}/>
+          <Route path='/' element={<Index />}/>
          <Route path='/productos' element={<ItemListContainer />} />
          <Route path='/contacto' element={<Contacto/>}/>
          <Route path='/PreguntasFrecuentes' element={<PreguntasFrecuentes/>}/>
