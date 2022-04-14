@@ -24,3 +24,12 @@
 .foto-izq-main img {
     width: 100%;
 }
+.mapa-index{
+    width: 100%;
+    position: relative;
+    top: 9rem;
+    border: solid #EAA798;
+}
+.map{
+    width: 100%;
+}

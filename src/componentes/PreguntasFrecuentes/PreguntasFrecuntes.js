@@ -6,15 +6,14 @@ function PreguntasFrecuentes() {
         <section>
         <div className="container-pf mt-3 mx-2">
             <div className="row">
-
-
                 <div className="texto-pf">
 
                     <div>
+                        <p>
                         <button className="btn-pf mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
                           <h5>Realizan entregas en todo el país?</h5>
                         </button>
-
+                       </p>
                         <div className="collapse" id="collapse1">
                             <div className="card card-body">
                                 Sí, llegamos a todo el territorio argentino. En los envíos al interior, contamos con embalaje especial y preparado, para que las piezas lleguen en perfectas condiciones. Normalmente realizamos el envío por Andreani, contratando seguro a la carga. Una
