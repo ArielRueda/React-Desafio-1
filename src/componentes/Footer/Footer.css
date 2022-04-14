@@ -1,7 +1,14 @@
 .footer {
     position: relative;
-    top: 85vh;
+    top: 75vh;
     width: 100%;
     background-color: #EAA798;
     height: 9rem;
+}
+.footer2{
+    position: relative;
+    top: 160vh;
+    width: 100%;
+    background-color: #EAA798;
+    height: 9rem;  
 }

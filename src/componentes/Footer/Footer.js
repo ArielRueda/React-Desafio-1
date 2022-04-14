@@ -6,7 +6,6 @@ import mail from '../imagenes/mail-logo.png'
 
 function Footer() {
 
-
     return(
         <div  className='footer'>
 

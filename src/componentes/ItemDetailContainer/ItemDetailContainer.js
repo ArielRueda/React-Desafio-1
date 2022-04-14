@@ -1,37 +1,41 @@
 import { getProductsById } from "../asyncMock";
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { useEffect , useState } from "react";
+import { useEffect, useState } from "react";
 import './ItemDetailContainer.css'
 import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = ()=>{
-    const [product ,setProducts]= useState()
-    const [loading,setLoading]=useState(true)
-    
-    const {productid}=useParams()
+const ItemDetailContainer = () => {
+    const [product, setProducts] = useState()
+    const [loading, setLoading] = useState(true)
 
-    useEffect(()=>{
-        getProductsById(productid).then(item=>{
+    const { productid } = useParams()
+
+    useEffect(() => {
+        getProductsById(productid).then(item => {
             setProducts(item)
-        }).catch(err=>{
+        }).catch(err => {
             console.log(err);
-        }).finally(()=>{
+        }).finally(() => {
             setLoading(false)
         })
-        return(()=>{
+        return (() => {
             setProducts()
         })
-    },[])
-    return(
+    }, [])
+    return (
         <div className="ItemDetailContainer">
             <h1></h1>
             {
-                loading?
-                <h1>cargando</h1>:
-                product?
-            <ItemDetail{...product}/>:
-            <h1>el producto no existe</h1>}
-           
+                loading ?
+                <div class="d-flex align-items-center">
+                <h1>Loading...</h1>
+                <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+              </div>
+                    :
+                    product ?
+                        <ItemDetail{...product} /> :
+                        <h1>el producto no existe</h1>}
+
         </div>
     )
 }
