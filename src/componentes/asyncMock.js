@@ -25,30 +25,30 @@ const products=[
     },
     {
         id:2,
-        name:"tazas",
-        price:480,
-        category:'vajilla',
+        name:"Multiproposito",
+        price:380,
+        category:'Adorno',
         img:imagen2,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:'Coleccion libera tu arte multiproposito pintada con una base blanca y decorada con tonos rosas'
     },
     {
         id:3,
-        name:'jarron',
-        price:700,
-        category:'macetas',
+        name:'Plato',
+        price:300,
+        category:'vajilla',
         img:imagen3,
         stock:8,
-        description:'jarron con diseño '
+        description:'Coleccion libera tu arte plato playo hecho con torno alfarero con diseños libres con colores ocre '
     },
     {
         id:4,
-        name:"tazas",
-        price:480,
+        name:"Cuenco",
+        price:350,
         category:'vajilla',
         img:imagen4,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:'Coleccion libera tu arte Cuenco rosa esmaltado a pincel con diseño en espiral'
     },
     {
         id:5,
@@ -61,12 +61,12 @@ const products=[
     },
     {
         id:6,
-        name:"tazas",
-        price:480,
+        name:"Bowl",
+        price:880,
         category:'vajilla',
         img:imagen6,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:'coleccion oceano bowl pintado tonos blaco y azul , esmaltado con detalles de flores'
     },
     {
         id:7,
@@ -75,7 +75,7 @@ const products=[
         category:'vajilla',
         img:imagen7,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:'Coleccion balance taza con asa en colores pasteles rosa,celeste y rosa'
     },
     {
         id:8,
@@ -84,16 +84,16 @@ const products=[
         category:'vajilla',
         img:imagen8,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:'coleccion balance taza con asa con un color blanco mate con diseños personalizados'
     },
     {
         id:9,
-        name:"tazas",
-        price:480,
-        category:'vajilla',
+        name:"multiproposito",
+        price:580,
+        category:'Adorno',
         img:imagen9,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:''
     },
     {
         id:10,
@@ -102,7 +102,7 @@ const products=[
         category:'vajilla',
         img:imagen10,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:'coleccion balance taza con asa con diseño rustico pintado con colores pasteles'
     },{
         id:11,
         name:"tazas",
@@ -110,7 +110,7 @@ const products=[
         category:'vajilla',
         img:imagen11,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:'tColeccion menos es mas set de vasija que contiene 3 tazas rayadas y una taza bitono'
     },
     {
         id:12,
@@ -119,7 +119,7 @@ const products=[
         category:'vajilla',
         img:imagen12,
         stock:18,
-        description:'tazas bicolor con tonalidades azul y blanca .apto para microondas'
+        description:'Coleccion descubri tu interior taza rustica con detalles en pinzel con bordes irregulares'
     },
     
 
@@ -137,7 +137,7 @@ export const getProductsById=(id)=>{
     return new Promise(resolve=>{
         setTimeout(() => {
             resolve(products.find(prod=>prod.id==id))
-        }, 6000);
+        }, 3000);
     })
 
     
