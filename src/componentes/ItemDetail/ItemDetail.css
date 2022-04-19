@@ -1,6 +1,4 @@
-.footer{
-    height: 200vh;
-}
+
 .card1{
     position: relative;
 }
@@ -37,5 +35,10 @@ display: inline-block;
     top: 16rem;
     font-size: 3rem;
 }
-
+.link-carrito{
+    position: absolute;
+    top: 24rem;
+    left: 58rem;
+    font-size: 2rem;
+}
 
