@@ -4,7 +4,7 @@ import Contador from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 
 const ItemDetail = (products) => {
-    const handelOnAdd = (quantity) => {
+    const handelOnAdd = (quantity ) => {
         console.log(`se agregaron ${quantity} productos`);
     }
     return (

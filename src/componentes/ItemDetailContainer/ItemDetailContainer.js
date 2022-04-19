@@ -27,9 +27,9 @@ const ItemDetailContainer = () => {
             <h1></h1>
             {
                 loading ?
-                <div class="d-flex align-items-center">
+                <div className="d-flex align-items-center">
                 <h1>Loading...</h1>
-                <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
               </div>
                     :
                     product ?
