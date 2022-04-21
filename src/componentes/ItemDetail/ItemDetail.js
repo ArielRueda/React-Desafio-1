@@ -15,7 +15,7 @@ const ItemDetail = ({ id, img, name, description, price, stock, initial, onAdd }
     const handelOnAdd = (count) => {
        
         setQuantity(count)
- console.log(`se agregaron al carrito ${quantity} ${name} `);
+ console.log(`se agregaron al carrito ${onAdd} ${name} `);
         const productObj = {
             id, name, price
         }
