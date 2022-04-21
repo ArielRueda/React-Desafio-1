@@ -4,18 +4,21 @@ import './estilo/bootstrap.min.css';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import NavBar from './componentes/NavBar';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
-import { useState } from 'react';
+import { useState , createContext} from 'react';
 import { BrowserRouter, Routes, Route  } from 'react-router-dom'
 import Footer from './componentes/Footer/Footer';
 import Home from './componentes/Home/Home';
 import Contacto from './componentes/contacto/Contacto';
 import PreguntasFrecuentes from './componentes/PreguntasFrecuentes/PreguntasFrecuntes';
-
+import {CartContextProvider} from './componentes/Context/CartContext'
 
 function App() {
+  const [cart ,setCart]=useState([])
+  
  
   return (
     <div className="App">
+      <CartContextProvider>
       <BrowserRouter>
         <NavBar />
         
@@ -29,6 +32,7 @@ function App() {
         </Routes>
         <Footer/>
       </BrowserRouter>
+      </CartContextProvider>
 
     </div>
   );

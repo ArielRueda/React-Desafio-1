@@ -1,9 +1,14 @@
 import  carrito from './carrito.png';
-import NavBar from '../NavBar.css';
-function CartWidget(params) {
+import  '../NavBar.css';
+import {useContext} from 'react';
+import CartContext from '../Context/CartContext';
+
+const  CartWidget=()=> {
+    const { getQuantity }=useContext(CartContext)
     return(
-<div><img className='imagen-carrito' src={carrito} alt="carrito"/>
-<p className='carrito'>0</p>
+<div>
+    <img className='imagen-carrito' src={carrito} alt="carrito"/>
+<p className='carrito'>{getQuantity()}</p>
      </div>
     );
 }
