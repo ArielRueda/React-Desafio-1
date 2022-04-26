@@ -2,8 +2,11 @@ import logo from './imagenes/desktop-logo.png';
 import NavBarCss from './NavBar.css';
 import CartWidget from './CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import CartContext from './Context/CartContext';
 
 function NavBar() {
+    const { getQuantity}=useContext(CartContext)
     return (
 
         <nav id="barra" className="navbar navbar-expand-md navbar-light bg-light">
@@ -26,7 +29,7 @@ function NavBar() {
 
                     </div>
                 </div>
-                <CartWidget />
+              {getQuantity()>0?<CartWidget />:null}
             </div>
 
         </nav>

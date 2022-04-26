@@ -1,0 +1,10 @@
+.Cart{
+    position: relative;
+    top: 17rem;
+
+}
+.lista{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}

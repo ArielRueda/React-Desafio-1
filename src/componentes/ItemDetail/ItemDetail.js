@@ -18,7 +18,7 @@ const ItemDetail = ({ id, img, name, description, price, stock, initial, onAdd }
         setQuantity(count)
  console.log(`se agregaron al carrito ${onAdd} ${name} `);
         const productObj = {
-            id, name, price
+            id, name, price,quantity:count,subtotal:price*count
         }
       addItem({...productObj,quantity:count})
     }
