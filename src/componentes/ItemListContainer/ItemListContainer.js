@@ -12,27 +12,34 @@ import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = (props) => {
+
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+    
     const { categoryId } = useParams()
+
+
     useEffect(() => {
-        // getProducts().then(prods => {
-        //     setProducts(prods)
-        // }).catch(error => {
-        //     console.log(error);
-        // })
-        const collectionRef =categoryId 
-        ? query(collection(firestoreDb,'products'),where('category'),'==',categoryId)
-        :collection(firestoreDb,'products')
-        getDocs(collectionRef).then(response=>{
-            console.log(response);
-            const products = response.docs.map(doc=>{
-                return{id:doc.id,...doc.data()}
-               
-            }) 
-           setProducts(products);
-        })
-    }, [])
-   
+        setLoading(true)
+
+        const collectionRef = categoryId 
+            ? query(collection(firestoreDb, 'products'), where('category', '==', categoryId))
+            : collection(firestoreDb, 'products')
+
+        getDocs(collectionRef)
+            .then(response => {
+                const products = response.docs.map(doc => {
+                    return { id: doc.id, ...doc.data()}
+                })
+                setProducts(products)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [categoryId]) 
 
     return (
         <div className='container-ps mt-5'>

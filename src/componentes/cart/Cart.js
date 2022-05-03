@@ -45,8 +45,22 @@ getDocs(query(collectionRef,where(documentId(),'in',ids)))
             outOfStock.push({id:doc.id,dataDoc})
         }
     })
-})
+}).then(()=>{
+    if (outOfStock.length===0) {
+        const collectionRef=collection(firestoreDb,'orders')
+       return addDoc(collectionRef,objOrder)
+        
+    }else{
+return Promise.reject({name:'outOfStockError',products:outOfStock})
     }
+}).then(({id})=>{
+    batch.commit()
+    console.log(`el id de la orden `);
+
+}).catch(error=>{
+    console.log(error);
+})
+    } 
     addDoc(collectionRef,objUser)
     .then(response=>{
         console.log(response.id);
