@@ -43,7 +43,7 @@ const products=[
     },
     {
         id:4,
-        name:"Cuenco",
+        name:'Cuenco',
         price:350,
         category:'vajilla',
         img:imagen4,

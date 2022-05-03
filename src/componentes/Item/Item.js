@@ -2,6 +2,7 @@ import './item.css'
 import { getProductsByIdS } from '../asyncMock'
 import '../../estilo/bootstrap.min.css'
 import {Link } from 'react-router-dom'
+import { getDocs } from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
 
 
@@ -14,7 +15,7 @@ const Item = ({ name, img, price,id }) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">${price}</p>
-                    <Link to={`/detalle/${id}`} className="verDetalle btn btn-primary">ver detalle</Link >
+                    <Link to={`/detalle/${doc.id}`} className="verDetalle btn btn-primary">ver detalle</Link >
                 </div> 
             </div>
         </div>

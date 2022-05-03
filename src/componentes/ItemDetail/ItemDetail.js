@@ -4,6 +4,7 @@ import { getProductsById } from "../asyncMock";
 import Contador from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 import CartContext from "../Context/CartContext";
+import { getDocs } from "firebase/firestore";
 
 
 
@@ -30,7 +31,7 @@ const ItemDetail = ({ id, img, name, description, price, stock, initial, onAdd }
                 <h3 className="name-card1" >{name}</h3>
                 <p className="card-text1">{description}</p>
                 <p className="card-price">${price}</p>
-                {isInCart(id) > 0 ? <Link to='/cart' className="link-carrito">ir al carrito</Link> : <Contador initial={0} stock={stock} onAdd={handelOnAdd} />}
+                {isInCart(doc.id) > 0 ? <Link to='/cart' className="link-carrito">ir al carrito</Link> : <Contador initial={0} stock={stock} onAdd={handelOnAdd} />}
             </div>
         </div>
 
