@@ -11,7 +11,7 @@ import { useParams } from 'react-router-dom';
 
 
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -33,28 +33,30 @@ const ItemListContainer = (props) => {
                 })
                 setProducts(products)
             })
+           
             .catch(error => {
                 console.log(error)
             })
             .finally(() => {
                 setLoading(false)
             })
-    }, [categoryId]) 
+    }, [categoryId])
+    console.log(products);
 
-    return (
-        <div className='container-ps mt-5'>
+    if(loading) {
+        return <h1>Cargando...</h1>
+    }
+
+    if(products.length === 0) {
+        return <h1>No hay productos</h1>
+    }
+
+    return(
+        <div className='ItemListContainer'>
             
-            
-
-                <ItemList products={products} />
-             
-
-        
-         
+            <ItemList products={products}/>
         </div>
-
-
-    );
+    )
 }
 
 export default ItemListContainer

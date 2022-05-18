@@ -3,8 +3,8 @@
     color: black;
     position: absolute;
     display: inline-block;
-    left: 51rem;
-    top: 22rem;
+    left: 45rem;
+    top: 25rem;
     }
 .botonDeMenos{
     background-color: #eaa798;
@@ -19,8 +19,8 @@
 }
 .botonAgregar{
     position: absolute;
-    top: 28rem;
-    left: 56rem;
+    top: 30rem;
+    left: 50rem;
     background-color: #eaa798;
 }
 .marcador{

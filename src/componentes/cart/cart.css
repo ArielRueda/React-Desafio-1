@@ -1,16 +1,64 @@
-.Cart{
-    position: relative;
-    top: 17rem;
 
-}
 .lista{
     position: relative;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    list-style: none;
 }
 .error-carrito{
     position: relative;
     justify-content: center;
     align-items: center;
     top: 80vh;
+}
+.buttonLimpiarCarrito{
+    position: absolute;
+    top: 37rem;
+    left: 17rem;
+}
+.buttonGenerarOrden{
+position: relative;
+top: 15.5rem;
+}
+.buttonVolverAproductos{
+    position: relative;
+    top: 15rem;
+    left: 35rem;
+    color: white;
+}
+.linkProductos{
+    color: white;
+    text-decoration: none;
+}
+.listaDeCompras{
+    height: 3rem;
+    background-color: #EAA798;
+    width: 80%;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1px 1px;
+    justify-self: center;
+    position: relative;
+    left: 11rem;
+    top: -11rem;
+    font-size: 1.3rem;
+}
+.totalCompra{
+    top: -5rem;
+    align-self:center ;
+    height: 3rem;
+    background-color: #EAA798;
+    width: 80%;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1px 1px;
+    justify-self: center;
+    position: relative;
+    left: 11rem;
+    font-size: 1.4rem;
+    
+}
+.guia{
+    position: relative;
+    color:black;
+
 }

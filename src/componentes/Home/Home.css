@@ -1,12 +1,13 @@
 .portada {
-    position: relative;
-    top: 7rem;
+  
     width: 100%;
     background-position: center;
 }
 
 .portada img {
     width: 100%;
+      position: relative;
+    top: -7rem;
 }
 
 .texto-main {
@@ -26,8 +27,8 @@
 }
 .mapa-index{
     width: 100%;
-    position: relative;
-    top: 9rem;
+    /* position: relative;
+    top: 9rem; */
     border: solid #EAA798;
 }
 .map{

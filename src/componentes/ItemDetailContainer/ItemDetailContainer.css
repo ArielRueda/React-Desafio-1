@@ -1,5 +1,10 @@
 .ItemDetailContainer{
     position: relative;
-    top: 17rem;
-    left: -13rem;
+
+    width: 80vw;
+    left: 8rem;
+    background-color: white;
+    height: 44rem;
+    box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 0%);
+    border: #e9e9e9 solid 1px;
 }

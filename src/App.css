@@ -1,19 +1,38 @@
+
+*{
+margin: 0;
+padding: 0;
+}
 .App {
   text-align: center;
   background-color: #e9e9e9;
-  height: 100%;
+  min-height: 100%;
+  display: grid;
+ grid-template-areas: 
+ "NavBar"
+ "Routes"
+ "footer";
+ grid-template-rows: 10% 80% 10%;
+ row-gap: 4rem;
+
+}
+
+.navbar{
+  grid-area: NavBar;
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 4%,rgba(233,233,233,1) 20%,#abacb0 100%); 
+}
+.Routes{
+  grid-area: Routes;
+
+}
+.footer{
+  grid-area: footer;
 }
 
 
 
 
-.App-header {
-  background-color: #e9e9e9;
-  height: 100%;
-  
- 
-  
-}
+
 .lista{
   position: relative;
   top: 15rem;
@@ -21,5 +40,10 @@
 .detail{
   position: relative;
   top: 15rem;
+}
+body{
+ min-height: 100%;
+  margin: 0;
+  /* background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 4%,rgba(233,233,233,1) 20%,rgba(233,233,233,1) 100%); */
 }
 

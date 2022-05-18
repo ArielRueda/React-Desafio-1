@@ -1,42 +1,43 @@
-import { getProductsById } from "../asyncMock";
+
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useEffect, useState } from "react";
 import './ItemDetailContainer.css'
 import { useParams } from "react-router-dom";
+import { getDoc, doc } from 'firebase/firestore'
+import { firestoreDb } from '../../services/firebase'
 
-const ItemDetailContainer = () => {
-    const [product, setProducts] = useState()
-    const [loading, setLoading] = useState(true)
-
+const ItemDetailContainer = ({ setCart, cart }) => {
+    const [product, setProduct] = useState()
+    const [loading, setLoading] = useState(false)
+    
     const { productid } = useParams()
+    console.log(productid);
 
     useEffect(() => {
-        getProductsById(productid).then(item => {
-            setProducts(item)
-        }).catch(err => {
-            console.log(err);
-        }).finally(() => {
-            setLoading(false)
+       getDoc(doc(firestoreDb,'products',productid)).then(response=>{
+           console.log(response);
+           const products={id:response.id ,...response.data()}
+           setProduct(products)
         })
-        return (() => {
-            setProducts()
-        })
-    }, [])
-    return (
-        <div className="ItemDetailContainer">
-            <h1></h1>
-            {
-                loading ?
-                <div className="d-flex align-items-center">
-                <h1>Loading...</h1>
-                <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
-              </div>
-                    :
-                    product ?
-                        <ItemDetail{...product} /> :
-                        <h1>el producto no existe</h1>}
+           return(()=>{
+               setProduct()
+       })
+    }, [productid])
 
+    if(loading) {
+        return(
+            <h1>Cargando...</h1> 
+        )
+    }
+
+    return (
+        <div className="ItemDetailContainer" >
+            { 
+                product 
+                    ? <ItemDetail  {...product} setCart={setCart} cart={cart}/> 
+                    : <h1>El producto no existe</h1> 
+            }
         </div>
-    )
+    )    
 }
 export default ItemDetailContainer

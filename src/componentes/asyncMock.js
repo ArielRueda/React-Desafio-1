@@ -124,15 +124,34 @@ const products=[
     
 
 ]
-export const getProducts=()=>{
+
+
+const categories =[
+    {id:'Cocina', description: "Cocina"},
+    {id:'Cerámica', description: "Cerámica"},
+    {id:'Baño', description: "Baño"},
+    {id:'Jardín', description: "Jardín"},
+    {id:'Accesorios', description: "Accesorios"}
+
+
+]
+export const getProducts=(productos)=>{
     return new Promise(resolve=>{
         setTimeout(() => {
-            resolve(products)
-        }, 2000);
+            resolve(categories)
+        }, 200);
     })
 
     
 }
+export const getProductos = (categoryId)=>{
+    return new Promise (resolve =>{
+        setTimeout(()=>{
+            resolve(categoryId ? products.filter(prod=> prod.category === categoryId): products)
+        },200)
+    })
+}
+
 export const getProductsById=(id)=>{
     return new Promise(resolve=>{
         setTimeout(() => {

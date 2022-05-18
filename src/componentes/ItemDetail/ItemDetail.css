@@ -1,44 +1,68 @@
-
-.card1{
-    position: relative;
+.card-detail{
+    display: grid;
+    grid-template-areas: 
+    "imagen-detail imagen-detail name-cardDetail"
+   " imagen-detail imagen-detail card-textDetail"
+   " imagen-detail imagen-detail card-price"
+   " imagen-detail imagen-detail contador";
 }
 
-.card-text1{
-    position: absolute;
-    top: 9rem;
-    left: 51rem;
+.card-textDetail{
+  
     font-size: 1.7rem;
     z-index: 1000;
+    position: relative;
+    left: -6rem;
 }
-.name-card1{
-    
-display: inline-block;
-    position: absolute;
-    top: -0;
-    left: 54rem;
-    font-size: 3rem;
+.name-cardDetail{
+    grid-area:name-cardDetail ;
+    position: relative;
+    left: -6rem;
+
 }
 
 .contador{
-    position: relative;
-    top: -2.4rem;
-    left: 1rem;
+    grid-area: contador;
 }
-.imagen-card1{
-    position: absolute;
-    width: 40%;
-    left: 15rem;
+.imagen-detail{
+  grid-area: imagen-detail;
+  width: 80%;
+ 
 }
 .card-price{
-    position: absolute;
-    left: 57rem;
-    top: 16rem;
-    font-size: 3rem;
+   grid-area: card-price;
+   font-size: 3rem;
+   position: relative;
+   left: -5rem;
+}
+.stock{
+    font-size: 1.5rem;
+    position: relative;
+    left: -4rem;
 }
 .link-carrito{
     position: absolute;
     top: 24rem;
-    left: 58rem;
+    left: 48rem;
+    padding: 5px;
+    margin-bottom: 10px;
+    
     font-size: 2rem;
+    height: 3rem;
+    text-decoration: none;
+    color: rgb(24, 14, 14);
+    background-color: rgb(255, 0, 0);
+    border-radius: 20px;
+}
+.seguirComprando{
+    position: relative;
+    left: -8rem;
+    top: 3rem;
+    font-size: 2rem;
+    height: 3rem;
+    text-decoration: none;
+    color: rgb(24, 14, 14);
+    background-color: rgb(0, 255, 81);
+    border-radius: 20px;
 }
 

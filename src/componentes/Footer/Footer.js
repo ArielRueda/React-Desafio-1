@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import './Footer.css'
 import instagram from '../imagenes/instagram-logo.png'
 import mail from '../imagenes/mail-logo.png'
+import ItemListContainer from "../ItemListContainer/ItemListContainer";
 
 
 function Footer() {

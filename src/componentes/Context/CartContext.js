@@ -20,6 +20,7 @@ export const CartContextProvider=({children})=>{
     }
     const isInCart=(id)=>{
         return cart.some(prod => prod.id===id)
+        console.log(id);
     }
     const clearCart =(id)=>{
 setCart([])
