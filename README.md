@@ -1,9 +1,8 @@
 # Munayka
 Este es un proyecto desarrollado para el curso de React JS de Coderhouse,en el cual muestro  lo que es un emprendimiento de mi hermana 
 
-## Available Scripts
-
-Para clonar el proyecto en su dispositivo, se deben ejecutar las siguientes líneas en la terminal:
+## start
+para empezar tendremos que que clonar el repositorio de github pero para poder clonar el proyecto en su dispositivo, se deben ejecutar las siguientes líneas en la terminal:
 
 git clone https://github.com/ArielRueda/React-Desafio-1
 
