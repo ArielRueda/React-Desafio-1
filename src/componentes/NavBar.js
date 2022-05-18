@@ -3,10 +3,25 @@ import NavBarCss from './NavBar.css';
 import CartWidget from './CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
 import { useContext } from 'react';
+import { useState, useEffect } from 'react';
 import CartContext from './Context/CartContext';
+import {firestoreDb} from '../services/firebase'
+import {collection,getDocs} from 'firebase/firestore'
 
 function NavBar() {
+    const [categories, setCategories] = useState([]);
+
     const { getQuantity}=useContext(CartContext)
+    useEffect(() => {
+        
+
+        getDocs(collection(firestoreDb, 'categories')).then(response => {
+            const categories = response.docs.map(doc => {
+                return { id: doc.id, ...doc.data()}
+            })
+            setCategories(categories)
+        })
+    }, [])
     return (
 
         <nav id="barra" className="navbar navbar-expand-md navbar-light bg-light">
@@ -23,7 +38,11 @@ function NavBar() {
                     <div id="items" className="navbar-nav">
                      
                          <Link to='/' className='nav-link'>Home</Link>
-                          <Link to='/productos' className='nav-link'>Productos</Link>
+                         <div>
+                    <Link to='/productos' className="navLink">Productos</Link>
+                    { categories.map(cat => <Link key={cat.id} to={`/category/${cat.id}`} className="navLink">{cat.description}</Link>) }
+                </div>
+                          
                         
                       <Link to='/PreguntasFrecuentes' className='nav-link'>PreguntasFrecuentes</Link>
 
