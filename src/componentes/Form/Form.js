@@ -75,7 +75,7 @@ const Form = () => {
             {
                 orderId ?
 
-                <h1 className="formH1">El id de su orden es {orderId}</h1> :
+                <h1 className="formH1"> su orden es {orderId}</h1> :
 
                 <form onSubmit={createOrder} className='form'>
                     <label className="formLabel">Nombre  Apellido</label>
