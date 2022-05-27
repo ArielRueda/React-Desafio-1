@@ -12,7 +12,7 @@ import Footer from './componentes/Footer/Footer';
 import Home from './componentes/Home/Home';
 import Form from './componentes/Form/Form'
 import PreguntasFrecuentes from './componentes/PreguntasFrecuentes/PreguntasFrecuntes';
-import { CartContextProvider } from './componentes/Context/CartContext'
+import { CartContextProvider } from './Context/CartContext'
 
 
 

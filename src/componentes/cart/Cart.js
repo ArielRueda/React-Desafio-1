@@ -1,67 +1,16 @@
 import { useContext, useState } from "react"
-import CartContext from "../Context/CartContext"
+import CartContext from "../../Context/CartContext"
 import '../../estilo/bootstrap.min.css'
 import './cart.css'
-import { addDoc, documentId, writeBatch, where, query, collection, Timestamp, getDocs } from "firebase/firestore"
-import { firestoreDb } from "../../services/firebase/index"
 import { Link } from "react-router-dom"
-import ItemListContainer from "../ItemListContainer/ItemListContainer"
+
 
 const Cart = () => {
     const [loading, setLoading] = useState(false)
 
-    const { cart, removeItem, getQuantity, clearCart } = useContext(CartContext)
+    const { cart,removeItem, getQuantity, clearCart } = useContext(CartContext)
 
-    const createOrder = () => {
-        setLoading(true)
-
-        const objOrder = {
-            items: cart,
-            buyer: {
-                name: 'Sebastian Zuviria',
-                phone: '123456789',
-                email: 'szvuria@gmail.com'
-            },
-            total: totalCart(),
-            date: new Date()
-        }
-
-        const ids = cart.map(prod => prod.id)
-
-        const batch = writeBatch(firestoreDb)
-
-        const collectionRef = collection(firestoreDb, 'products')
-
-        const outOfStock = []
-
-        getDocs(query(collectionRef, where(documentId(), 'in', ids)))
-            .then(response => {
-                response.docs.forEach(doc => {
-                    const dataDoc = doc.data()
-                    const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity
-
-                    if(dataDoc.stock >= prodQuantity) {
-                        batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity})
-                    } else {
-                        outOfStock.push({ id: doc.id, ...dataDoc })
-                    }
-                })
-            }).then(() => {
-                if(outOfStock.length === 0) {
-                    const collectionRef = collection(firestoreDb, 'orders')
-                    return addDoc(collectionRef, objOrder)
-                } else {
-                    return Promise.reject({ name: 'outOfStockError', products: outOfStock})
-                }
-            }).then(({ id }) => {
-                batch.commit()
-                console.log(`El id de la orden es ${id}`)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setLoading(false)
-            })
-    }
+   
 
     if(loading) {
         return <h1>Se esta generando su orden</h1>
@@ -80,7 +29,7 @@ const Cart = () => {
         const prices = cart.forEach(prod => {
             total = total + (prod.price * prod.quantity)
         })
-        console.log(total);
+        // console.log(total);
         return total;
     }
 
@@ -104,7 +53,7 @@ const Cart = () => {
             </ul>
             <button onClick={() => clearCart()} className="buttonLimpiarCarrito btn btn-secondary">Limpiar carrito</button>
            <button  className="buttonVolverAproductos  btn btn-secondary"><Link to='/productos' className="linkProductos">Volver a Productos</Link></button>
-            <button onClick={() => createOrder()} className="buttonGenerarOrden btn btn-secondary"><Link to='/Form'>Finalizar Compra</Link></button>
+            <button  className="buttonGenerarOrden btn btn-secondary"><Link to='/Form'>Finalizar Compra</Link></button>
         </div>
     )
 }

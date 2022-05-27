@@ -1,11 +1,12 @@
 import { useState, useContext } from "react";
 import { addDoc, collection, Timestamp, getDocs, writeBatch, query, where, documentId } from "firebase/firestore";
-import CartContext from '.././Context/CartContext';
+import CartContext from '../../Context/CartContext';
 import { firestoreDb } from "../../services/firebase";
 import './Form.css';
+import { Link } from "react-router-dom";
 
 const Form = () => {
-    const {cart, precioTotal, clearCart } = useContext(CartContext)
+    const {cart, totalCart, clearCart } = useContext(CartContext)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -21,7 +22,7 @@ const Form = () => {
                 email: email,
                 phone: phone,
             },
-            total: precioTotal(cart),
+            total: totalCart(cart),
             date: Timestamp.fromDate(new Date())
         }
 
@@ -36,46 +37,48 @@ const Form = () => {
         const outOfStock= []
 
         getDocs(query(collectionRef, where(documentId(), 'in', ids)))
-            .then(response => {
-                response.docs.forEach(doc => {
-                    const dataDoc = doc.data()
-                    const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity
+        .then(response => {
+            response.docs.forEach(doc => {
+                const dataDoc = doc.data()
+                const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity
 
-                    if(dataDoc.stock >= prodQuantity){
-                        batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity })
-                    } else {
-                        outOfStock.push({ id: doc.id, ...dataDoc })
-                    }
-                })
-            }).then(() =>{
-                if (outOfStock.length === 0) {
-                    const collectionReference = collection(firestoreDb, 'orders')
-
-                    return addDoc(collectionReference, objOrder)
+                if(dataDoc.stock >= prodQuantity){
+                    batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity })
                 } else {
-                    return Promise.reject({name: 'outOfStockError', products: outOfStock })
+                    outOfStock.push({ id: doc.id, ...dataDoc })
                 }
-            }).then(({ id }) => {
-                batch.commit()
-                setOrderId(id)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setLoading(false)
-                clearCart()
             })
+        }).then(() =>{
+            if (outOfStock.length === 0) {
+                const collectionReference = collection(firestoreDb, 'orders')
 
-            if (loading) {
-                return <h1>Se está generando su orden</h1>
+                return addDoc(collectionReference, objOrder)
+            } else {
+                return Promise.reject({name: 'outOfStockError', products: outOfStock })
             }
-    }
+        }).then(({ id }) => {
+            batch.commit()
+            setOrderId(id)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+            setLoading(false)
+            clearCart()
+        })
+
+        if (loading) {
+            return <h1>Se está generando su orden</h1>
+        }
+}
 
     return(
         <div className="formContainer">
             {
-                orderId ?
-
-                <h1 className="formH1"> su orden es {orderId}</h1> :
+                orderId ?<div>
+<h1>gracias por elegirnos</h1>
+                <h1 className="formH1"> su orden es {orderId}</h1>
+                <button><Link to="/productos">Volver a catalogo</Link></button>
+                 </div>:
 
                 <form onSubmit={createOrder} className='form'>
                     <label className="formLabel">Nombre  Apellido</label>

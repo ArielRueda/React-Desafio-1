@@ -4,7 +4,7 @@ import CartWidget from './CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
 import { useContext } from 'react';
 import { useState, useEffect } from 'react';
-import CartContext from './Context/CartContext';
+import CartContext from '../Context/CartContext.js';
 import {firestoreDb} from '../services/firebase'
 import {collection,getDocs} from 'firebase/firestore'
 

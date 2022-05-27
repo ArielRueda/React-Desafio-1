@@ -2,7 +2,6 @@ import '../imagenes/1.png';
 import "../../estilo/bootstrap.min.css"
 import "./ItemListContainer.css"
 import ItemList from '../ItemList/ItemList.js'
-// import { getProducts } from '../asyncMock.js'
 import { useEffect, useState } from 'react';
 import { getDocs ,collection ,query,where} from 'firebase/firestore';
 import { firestoreDb } from '../../services/firebase';
@@ -41,7 +40,7 @@ const ItemListContainer = () => {
                 setLoading(false)
             })
     }, [categoryId])
-    console.log(products);
+    
 
     if(loading) {
         return <h1>Cargando...</h1>

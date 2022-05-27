@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { getProductsById } from "../asyncMock";
 import Contador from '../ItemCount/ItemCount'
 import './ItemDetail.css'
-import CartContext from "../Context/CartContext";
+import CartContext from "../../Context/CartContext";
 import { getDocs } from "firebase/firestore";
 
 
@@ -17,7 +17,7 @@ const ItemDetail = ({ id, img, name, description, price, stock, initial, onAdd }
     const handelOnAdd = (count) => {
        
         setQuantity(count)
- console.log(`se agregaron al carrito ${count} ${name} `);
+//  console.log(`se agregaron al carrito ${count} ${name} `);
         const productObj = {
             id, name, price,quantity:count,subtotal:price*count
         }
@@ -32,9 +32,7 @@ const ItemDetail = ({ id, img, name, description, price, stock, initial, onAdd }
                 <p className="card-textDetail">{description}</p>
                 <p className="card-price">${price}</p>
                 <p className="stock">Stock:{stock}  </p>
-                {/* {isInCart(id) > 0 ?<Link to='/cart' className="">Terminar La Compra</Link>: <Contador className='contador' initial={0} stock={stock} onAdd={handelOnAdd} />}
-                <Link to='/productos' className="toCart">Seguir Comprando</Link> */}
-                 
+              
                  { isInCart(id) ?  
                     <div>
                         <Link to={'/cart'} className='link-carrito' >Ir al Carrito</Link>
