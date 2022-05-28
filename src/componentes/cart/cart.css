@@ -17,9 +17,15 @@
     top: 37rem;
     left: 17rem;
 }
+.generarOrden{
+    color:white;
+    text-decoration: none;
+}
 .buttonGenerarOrden{
 position: relative;
 top: 15.5rem;
+color :beige;
+text-decoration: none;
 }
 .buttonVolverAproductos{
     position: relative;

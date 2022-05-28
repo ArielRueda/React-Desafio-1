@@ -1,6 +1,7 @@
 import { useState } from "react";
 import   "./ItemCount.css"
 
+
 const Contador=({initial,stock,onAdd})=>{
     const  [count,setCount]=useState(initial)
     const decrement =()=>{
@@ -26,6 +27,7 @@ return(
         </div>
         <div>
             <button className="botonAgregar btn btn-primary" onClick={()=>onAdd(count)}>Agregar al carrito</button>
+            
         </div>
     </div>
 )

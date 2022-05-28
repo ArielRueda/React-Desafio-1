@@ -29,16 +29,16 @@ El carrito muestra un resumen de la compra, detallando por cada producto título
 
 # Funciones *CartContext*
 
-🌱 *addItem* => añade el producto al carrito. En el caso de que el producto ya esté en el carrito, esta función va a evitar que se genere otra línea de ItemCart, solo modificará la cantidad de dicho producto.
+- *addItem* => añade el producto al carrito. En el caso de que el producto ya esté en el carrito, esta función va a evitar que se genere otra línea de ItemCart, solo modificará la cantidad de dicho producto.
 
-🌱 *getQuantity* => esta función permite que cuando agregas productos al carrito se muestre la cantidad en el CartWidget.
+- *getQuantity* => esta función permite que cuando agregas productos al carrito se muestre la cantidad en el CartWidget.
 
-🌱 *isInCart* => reconoce si el producto está o no en el carrito.
+- *isInCart* => reconoce si el producto está o no en el carrito.
 
-🌱 *clearCart* => esta función está asociada al botón de vaciar carrito y limpiará todo lo que se encuentre en el.
+- *clearCart* => esta función está asociada al botón de vaciar carrito y limpiará todo lo que se encuentre en el.
 
-🌱 *removeItem* => esta función removerá el producto con ese id y seteará el nuevo valor del CartWidget.
+- *removeItem* => esta función removerá el producto con ese id y seteará el nuevo valor del CartWidget.
 
-🌱 *getQuantityProd* => esta función se utiliza en ItemDetail para guardar la cantidad que seleccionás de ese producto en el contador. 
+- *getQuantityProd* => esta función se utiliza en ItemDetail para guardar la cantidad que seleccionás de ese producto en el contador. 
 
-🌱 *totalCost* => esta función calcula el valor total de la compra.
+- *totalCost* => esta función calcula el valor total de la compra.

@@ -17,7 +17,7 @@ const ItemDetail = ({ id, img, name, description, price, stock, initial, onAdd }
     const handelOnAdd = (count) => {
        
         setQuantity(count)
-//  console.log(`se agregaron al carrito ${count} ${name} `);
+
         const productObj = {
             id, name, price,quantity:count,subtotal:price*count
         }
@@ -34,9 +34,9 @@ const ItemDetail = ({ id, img, name, description, price, stock, initial, onAdd }
                 <p className="stock">Stock:{stock}  </p>
               
                  { isInCart(id) ?  
-                    <div>
+                    <div className="container">
                         <Link to={'/cart'} className='link-carrito' >Ir al Carrito</Link>
-                        <Link to={'/'} className='seguirComprando' >Seguir comprando</Link>
+                        <Link to={'/productos'} className='seguirComprando' >Seguir comprando</Link>
                     </div>
                     :
                     <Contador className='contador' initial={0} stock={stock} onAdd={handelOnAdd} />

@@ -6,6 +6,10 @@
    " imagen-detail imagen-detail card-price"
    " imagen-detail imagen-detail contador";
 }
+.container{
+    position: relative;
+    display: flex;
+}
 
 .card-textDetail{
   
@@ -42,8 +46,9 @@
 }
 .link-carrito{
     position: absolute;
-    top: 24rem;
-    left: 48rem;
+    top: 3rem;
+    width: 12rem;
+    left: 14rem;
     padding: 5px;
     margin-bottom: 10px;
     
