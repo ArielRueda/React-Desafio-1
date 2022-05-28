@@ -6,7 +6,7 @@ import './Form.css';
 import { Link } from "react-router-dom";
 
 const Form = () => {
-    const {cart, totalCart, clearCart } = useContext(CartContext)
+    const { cart, totalCart, clearCart } = useContext(CartContext)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -26,7 +26,7 @@ const Form = () => {
             date: Timestamp.fromDate(new Date())
         }
 
-        console.log(objOrder)
+       
 
         const ids = cart.map(prod => prod.id)
 
@@ -34,62 +34,62 @@ const Form = () => {
 
         const collectionRef = collection(firestoreDb, 'products')
 
-        const outOfStock= []
+        const outOfStock = []
 
         getDocs(query(collectionRef, where(documentId(), 'in', ids)))
-        .then(response => {
-            response.docs.forEach(doc => {
-                const dataDoc = doc.data()
-                const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity
+            .then(response => {
+                response.docs.forEach(doc => {
+                    const dataDoc = doc.data()
+                    const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity
 
-                if(dataDoc.stock >= prodQuantity){
-                    batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity })
+                    if (dataDoc.stock >= prodQuantity) {
+                        batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity })
+                    } else {
+                        outOfStock.push({ id: doc.id, ...dataDoc })
+                    }
+                })
+            }).then(() => {
+                if (outOfStock.length === 0) {
+                    const collectionReference = collection(firestoreDb, 'orders')
+
+                    return addDoc(collectionReference, objOrder)
                 } else {
-                    outOfStock.push({ id: doc.id, ...dataDoc })
+                    return Promise.reject({ name: 'outOfStockError', products: outOfStock })
                 }
+            }).then(({ id }) => {
+                batch.commit()
+                setOrderId(id)
+            }).catch(error => {
+                console.log(error)
+            }).finally(() => {
+                setLoading(false)
+                clearCart()
             })
-        }).then(() =>{
-            if (outOfStock.length === 0) {
-                const collectionReference = collection(firestoreDb, 'orders')
-
-                return addDoc(collectionReference, objOrder)
-            } else {
-                return Promise.reject({name: 'outOfStockError', products: outOfStock })
-            }
-        }).then(({ id }) => {
-            batch.commit()
-            setOrderId(id)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-            clearCart()
-        })
 
         if (loading) {
             return <h1>Se está generando su orden</h1>
         }
-}
+    }
 
-    return(
+    return (
         <div className="formContainer">
             {
-                orderId ?<div>
-<h1>gracias por elegirnos</h1>
-                <h1 className="formH1"> su numero de  orden es {orderId}</h1>
-                <button className="btn btn-secondary"><Link className="volver" to="/productos">Volver a catalogo</Link></button>
-                 </div>:
+                orderId ? <div>
+                    <h1>gracias por elegirnos</h1>
+                    <h1 className="formH1"> su numero de  orden es {orderId}</h1>
+                    <button className="btn btn-secondary"><Link className="volver" to="/productos">Volver a catalogo</Link></button>
+                </div> :
 
-                <form onSubmit={createOrder} className='form'>
-                    <label className="formLabel">Nombre  Apellido</label>
-                    <input type='text' onChange={(e) => setName(e.target.value)} required className="formInput"/>
-                    <label className="formLabel">Email</label>
-                    <input type='email' onChange={(e) => setEmail(e.target.value)} required className="formInput"/>
-                    <label className="formLabel"> Número de teléfono</label>
-                    <input type='number' onChange={(e) => setPhone(e.target.value)} required className="formInput"/>
+                    <form onSubmit={createOrder} className='form'>
+                        <label className="formLabel">Nombre  Apellido</label>
+                        <input type='text' onChange={(e) => setName(e.target.value)} required className="formInput" />
+                        <label className="formLabel">Email</label>
+                        <input type='email' onChange={(e) => setEmail(e.target.value)} required className="formInput" />
+                        <label className="formLabel"> Número de teléfono</label>
+                        <input type='number' onChange={(e) => setPhone(e.target.value)} required className="formInput" />
 
-                    <button type='submit' className="formButton">Submit</button>
-                </form>
+                        <button type='submit' className="formButton">Submit</button>
+                    </form>
             }
         </div>
     )
