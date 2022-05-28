@@ -41,4 +41,7 @@ El carrito muestra un resumen de la compra, detallando por cada producto título
 
 - *getQuantityProd* => esta función se utiliza en ItemDetail para guardar la cantidad que seleccionás de ese producto en el contador. 
 
-- *totalCart* => esta función calcula el valor total de la compra.
+- *totalCart* => esta  función calcula el valor total de la compra.
+
+## un vistazo de la app
+![Alt text](https://github.com/ArielRueda/React-Desafio-1/blob/main/gif/React-app.gif)
