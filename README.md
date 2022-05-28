@@ -44,4 +44,4 @@ El carrito muestra un resumen de la compra, detallando por cada producto título
 - *totalCost* => esta función calcula el valor total de la compra.
 
 ## un vistazo de la app
-![Alt text] (https://github.com/ArielRueda/React-Desafio-1/blob/main/gif/React-app.gif)
+![Alt text](https://github.com/ArielRueda/React-Desafio-1/blob/main/gif/React-app.gif)
