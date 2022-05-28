@@ -41,4 +41,4 @@ El carrito muestra un resumen de la compra, detallando por cada producto título
 
 - *getQuantityProd* => esta función se utiliza en ItemDetail para guardar la cantidad que seleccionás de ese producto en el contador. 
 
-- *totalCost* => esta función calcula el valor total de la compra.
+- *totalCart* => esta función calcula el valor total de la compra.
