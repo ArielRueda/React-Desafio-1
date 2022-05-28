@@ -1,0 +1,11 @@
+.loadingPadre{
+    height: 100vh;
+    position: relative;
+
+}
+.loadingHijo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}

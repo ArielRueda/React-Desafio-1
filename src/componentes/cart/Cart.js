@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 const Cart = () => {
     const [loading, setLoading] = useState(false)
 
-    const { cart,removeItem, getQuantity, clearCart } = useContext(CartContext)
+    const { cart, totalCart,removeItem, getQuantity, clearCart } = useContext(CartContext)
 
    
 
@@ -24,14 +24,8 @@ const Cart = () => {
 
 
 
-    const totalCart = () => {
-        let total = 0;
-        const prices = cart.forEach(prod => {
-            total = total + (prod.price * prod.quantity)
-        })
-        // console.log(total);
-        return total;
-    }
+    
+     
 
     return (
         <div className="Cart">

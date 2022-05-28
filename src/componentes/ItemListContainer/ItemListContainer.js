@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { getDocs ,collection ,query,where} from 'firebase/firestore';
 import { firestoreDb } from '../../services/firebase';
 import { useParams } from 'react-router-dom';
+import { Spinner } from 'reactstrap';
+
 
 
 
@@ -43,7 +45,12 @@ const ItemListContainer = () => {
     
 
     if(loading) {
-        return <h1>Cargando...</h1>
+        return <div className='loadingPadre'>
+            <div className='loadingHijo'>
+            <Spinner color="dark" /> 
+          
+            </div>
+            </div>
     }
 
     if(products.length === 0) {

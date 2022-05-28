@@ -5,7 +5,7 @@ import './ItemDetailContainer.css'
 import { useParams } from "react-router-dom";
 import { getDoc, doc } from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase'
-import { Spinner } from 'react-bootstrap';
+import { Spinner } from 'reactstrap';
 
 const ItemDetailContainer = ({ setCart, cart }) => {
     const [product, setProduct] = useState()
@@ -25,17 +25,25 @@ const ItemDetailContainer = ({ setCart, cart }) => {
                setProduct()
        })
     }, [productid])
-   
+    if(loading) {
+        return <div className='loadingPadre'>
+            <div className='loadingHijo'>
+            <Spinner color="dark" /> 
+          
+            </div>
+            </div>
+    }
 
   
 
     return (
         <div className="ItemDetailContainer" >
             {  loading ? 
-                    <h1 className='itemDetailContainerText'>Cargando...</h1> :
+                    <h1 className='itemDetailContainerText'> <Spinner/>Cargando...</h1> :
                 product 
-                    ? <ItemDetail  {...product} setCart={setCart} cart={cart}/> 
-                    : <h1>El producto no existe</h1> 
+                    ? <ItemDetail  {...product} setCart={setCart} cart={cart}/>  :
+                    //  <h1>El producto no existe</h1> 
+                    loading
             }
         </div>
     )    

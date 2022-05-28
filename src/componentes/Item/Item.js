@@ -1,5 +1,5 @@
 import './item.css'
-import { getProductsByIdS } from '../asyncMock'
+
 import '../../estilo/bootstrap.min.css'
 import {Link } from 'react-router-dom'
 import { getDocs } from 'firebase/firestore'

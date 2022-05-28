@@ -83,30 +83,30 @@ const categories =[
 
 
 ]
-export const getProducts=(productos)=>{
-    return new Promise(resolve=>{
-        setTimeout(() => {
-            resolve(categories)
-        }, 200);
-    })
+// export const getProducts=(productos)=>{
+//     return new Promise(resolve=>{
+//         setTimeout(() => {
+//             resolve(categories)
+//         }, 200000);
+//     })
 
     
-}
-export const getProductos = (categoryId)=>{
-    return new Promise (resolve =>{
-        setTimeout(()=>{
-            resolve(categoryId ? products.filter(prod=> prod.category === categoryId): products)
-        },200)
-    })
-}
+// }
+// export const getProductos = (categoryId)=>{
+//     return new Promise (resolve =>{
+//         setTimeout(()=>{
+//             resolve(categoryId ? products.filter(prod=> prod.category === categoryId): products)
+//         },20000)
+//     })
+// }
 
-export const getProductsById=(id)=>{
-    return new Promise(resolve=>{
-        setTimeout(() => {
-            resolve(products.find(prod=>prod.id==id))
-        }, 3000);
-    })
+// export const getProductsById=(id)=>{
+//     return new Promise(resolve=>{
+//         setTimeout(() => {
+//             resolve(products.find(prod=>prod.id==id))
+//         }, 300000);
+//     })
 
     
-}
+// }
 export default products

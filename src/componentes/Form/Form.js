@@ -76,7 +76,7 @@ const Form = () => {
             {
                 orderId ?<div>
 <h1>gracias por elegirnos</h1>
-                <h1 className="formH1"> su orden es {orderId}</h1>
+                <h1 className="formH1"> su numero de  orden es {orderId}</h1>
                 <button><Link to="/productos">Volver a catalogo</Link></button>
                  </div>:
 

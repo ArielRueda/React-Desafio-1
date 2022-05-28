@@ -5,7 +5,7 @@ import Accordion from 'react-bootstrap/Accordion'
 function PreguntasFrecuentes() {
     return (
         <section>
-        <Accordion defaultActiveKey="0">
+        <Accordion >
   <Accordion.Item eventKey="0">
     <Accordion.Header>Realizan entregas en todo el país?</Accordion.Header>
     <Accordion.Body>
@@ -21,7 +21,7 @@ function PreguntasFrecuentes() {
   </Accordion.Item>
 </Accordion>
 
-<Accordion defaultActiveKey="3">
+<Accordion >
   <Accordion.Item eventKey="3">
     <Accordion.Header>¿Qué métodos de pago aceptan?</Accordion.Header>
     <Accordion.Body>
