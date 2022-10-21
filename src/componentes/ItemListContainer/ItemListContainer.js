@@ -7,6 +7,7 @@ import { getDocs ,collection ,query,where} from 'firebase/firestore';
 import { firestoreDb } from '../../services/firebase';
 import { useParams } from 'react-router-dom';
 import { Spinner } from 'reactstrap';
+import pantallaLoading from '../imagenes/desktop-logo-copia.png'
 
 
 
@@ -47,7 +48,8 @@ const ItemListContainer = () => {
     if(loading) {
         return <div className='loadingPadre'>
             <div className='loadingHijo'>
-            <Spinner color="dark" /> 
+            <img src={pantallaLoading} alt="logo" />
+            <Spinner  className='spinner' color="dark" /> 
           
             </div>
             </div>
