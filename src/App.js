@@ -4,7 +4,7 @@ import './estilo/bootstrap.min.css';
 import './App.css';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import NavBar from './componentes/NavBar';
-import Cart from './componentes/Cart/Cart';
+import Cart from './componentes/cart/Cart';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import { useState, createContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
