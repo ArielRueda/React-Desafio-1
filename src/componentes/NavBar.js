@@ -28,7 +28,7 @@ function NavBar() {
     }, [])
     return (
 <Navbar id='barra' bg="light" expand="lg">
-      <Container>
+      <Container fluid>
         <Navbar.Brand as={Link} to='./'><img src={logo} alt="logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -42,34 +42,7 @@ function NavBar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-        // <nav id="barra" className="navbar navbar-expand-md navbar-light bg-light">
-        //     <div className="container-fluid">
-        //         <Link to='/' className='navbar-brand'> <img src={logo} alt="logo" /></Link>
-          
-                   
-            
-        //         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        //             <span className="navbar-toggler-icon">
-        //             </span>
-        //         </button>
-        //         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        //             <div id="items" className="navbar-nav">
-                     
-        //                  <Link to='/' className='nav-link'>Home</Link>
-        //                  <div>
-        //             <Link to='/productos' className="navLink">Productos</Link>
-        //             { categories.map(cat => <Link key={cat.id} to={`/category/${cat.id}`} className="navLink">{cat.description}</Link>) }
-        //         </div>
-                          
-                        
-        //               <Link to='/PreguntasFrecuentes' className='nav-link'>PreguntasFrecuentes</Link>
-
-        //             </div>
-        //         </div>
-        //       {getQuantity()>0?<CartWidget />:null}
-        //     </div>
-
-        // </nav>
+       
     );
 }
 export default NavBar
