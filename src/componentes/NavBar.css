@@ -11,6 +11,9 @@
     font-size: 1.7rem;
     font-family: 'Vollkorn', serif;
 }
+#basic-navbar-nav{
+    z-index: 21;
+}
 
 #items a::after {
     content: "";
