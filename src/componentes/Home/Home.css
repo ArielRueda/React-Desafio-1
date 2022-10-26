@@ -1,25 +1,52 @@
 .portada {
-  
+    position: relative;
     width: 100%;
     background-position: center;
+    top: -15rem;
+    
 }
 
 .portada img {
     width: 100%;
       position: relative;
-    top: -7rem;
+    top: -11rem;
+   
 }
+.portada::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    z-index: 2;
+    left: 0;
+    top: 8rem;
+    background: linear-gradient(to bottom, rgba(233,233,233,1) 0%,rgba(233,233,233,0.3) 90%,rgba(233,233,233,0.01) 100%);
+}
+/* .portada::after{
+    content:"";
+    width: 100%;
+    height: 30rem;
+    left: 0%;
+    position: absolute;
+    color:red;
+    z-index: 535;
+} */
 
 .texto-main {
     position: relative;
-    width: 100%;
+    width: 50%;
     height: 45vh;
     padding: 3rem;
     max-width: 1300px;
     margin: auto;
-    top: 4rem;
+    top: 9rem;
     font-size: 1.3rem;
-    font-family: 'Vollkorn', serif;
+    z-index: 3;
+    opacity: 0.8;
+    font-family: 'Roboto',sans-serif;
+}
+.texto-main spam{
+    color: #EAA798;
 }
 
 .foto-izq-main img {

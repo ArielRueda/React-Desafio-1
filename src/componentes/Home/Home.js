@@ -5,22 +5,16 @@ import mesa from '../imagenes/mesa_recorte.jpg'
 const Home = () => {
     return <div>
         <div>
-            <div>
+            <div >
+                
                 <div className="portada mt-5">
-                    <img src={portada} />
+                <p className="texto-main">
+                        <spam>MUNAYKA </spam> es una marca que se nutre de un profundo amor por una de las técnicas más nobles y antiguas desarrolladas por el hombre: la <spam>cerámica</spam>.</p>
+                    <img   src={portada} />
                 </div>
             </div>
-            <div>
-                <div className="texto-main">
-
-
-                    <p>
-                        MUNAYKA  es una marca que se nutre de un profundo amor por una de las técnicas más nobles y antiguas desarrolladas por el hombre: la cerámica. En plena era tecnológica apostamos por el auténtico trabajo hecho a mano. Todas son piezas únicas
-                        hechas a mano DUREZA + RESISTENCIA + IMPERMEABILIDAD Nuestra materia prima es la arcilla que cuando es sometida a altas temperaturas (más de 1000C) en hornos especiales, pierde todo su contenido de agua y se transforma en cerámica,
-                        resultando un producto de extrema dureza y resistencia. Una cubierta de esmalte cerámico (vidriado) asegura total impermeabilidad </p>
-
-
-                </div>
+            <div className='separador'>
+                
             </div>
         </div>
 

@@ -27,7 +27,7 @@ function NavBar() {
         })
     }, [])
     return (
-<Navbar id='barra' bg="light" expand="lg">
+<Navbar id='barra' bg="light" variant="light" expand="lg">
       <Container fluid>
         <Navbar.Brand as={Link} to='./'><img src={logo} alt="logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -35,6 +35,8 @@ function NavBar() {
           <Nav  id="items"className="me-auto">
             <Nav.Link as={Link} to='./' >Home</Nav.Link>
             <Nav.Link as={Link} to='./productos'>Productos</Nav.Link>
+            <Nav.Link as={Link} to='./productos'>Nosotras</Nav.Link>
+            <Nav.Link as={Link} to='./PreguntasFrecuentes'>Contacto</Nav.Link>
             <Nav.Link as={Link} to='./PreguntasFrecuentes'>FAQ</Nav.Link>
             <Nav.Link  > {getQuantity()>0?<CartWidget />:null}</Nav.Link>
             

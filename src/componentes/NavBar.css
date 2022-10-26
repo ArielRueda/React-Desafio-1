@@ -1,6 +1,7 @@
 #barra {
-   
+   background-color: #e9e9e9!important;
     width: 100%;
+    z-index: 2;
   
 }
 
@@ -8,14 +9,16 @@
     width: 100%;
     align-items: center;
     justify-content: flex-end;
+    z-index: 34;
+    opacity: 1;
 }
 
 #items a {
-    /* opacity: 1; */
+     opacity: 1;
     position: relative;
-    
-    font-size: 1.7rem;
-    font-family: 'Vollkorn', serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
 }
 #basic-navbar-nav{
     z-index: 21;
@@ -47,10 +50,7 @@
     font-size: 2.5rem;
 
 }
-/* .imagen-carrito{
-    position: relative;
-    top: 1rem;
-}  */
+
 .cartWidget{
     display: flex;
     justify-content: end;
