@@ -1,0 +1,15 @@
+
+
+.carrousel__lista{
+    display: flex;
+    
+    justify-content: space-evenly;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.carrousel__fotos{
+    width: 20%;
+    height: 60%;
+    box-sizing: border-box;
+   
+}

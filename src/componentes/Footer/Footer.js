@@ -15,19 +15,27 @@ function Footer() {
 <div className="munayka">
     <p> MunaykaCopyrights © 2021 Todos Los Derechos Reservados.</p>
 
+ <ul className="d-flex justify-content-around">
+
+        <li className="instagram">
+            <a href="https://www.instagram.com/munayka/" target='_blank'><img src={instagram} alt="instagram"/></a>
+        </li>
+        {/* <li className="mail "> <img src={mail} alt="mail " width={18}  /> ruedamagali33@gmail.com</li> */}
+
+    </ul>
 </div>
 
 
 <div className="redes ">
 
-    <ul className="d-flex justify-content-around">
+    {/* <ul className="d-flex justify-content-around">
 
         <li>
             <a href="https://www.instagram.com/munayka/" target='_blank'><img src={instagram} alt="instagram"/></a>
         </li>
-        <li className="mt-3"> <img src={mail} alt="mail "/> ruedamagali33@gmail.com</li>
+        <li className=" mt-3"> <img src={mail} alt="mail " width={18}  /> ruedamagali33@gmail.com</li>
 
-    </ul>
+    </ul> */}
 </div>
 
 
